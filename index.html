@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Chart with Chart.js</title>
+
+</head>
+<body>
+
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script> 
+
+$(document).ready(function(){
+    $.ajax({
+        url:"sample.php",
+        method: "GET",
+        success: function(data) {
+            console.log(data);
+        
+                var employee = [];
+                var order = [];
+                var colors = [];
+
+               for(var i in data) {
+                employee.push(data[i].emp_name);
+                order.push(data[i].date);
+                colors.push(color());
+               } 
+               var chartdata = {
+                labels: employee,
+                datasets : [{
+    label: "booking data",
+    backgroundColor: colors,
+    data: order
+}]
+
+               };
+           
+     var ctx = document.getElementById('myChart').getContext('2d');
+
+               var linegraph = new chart(ctx,{
+                type: 'bar',
+                data: chartdata,
+               });
+
+
+        },
+        error: function(data){
+            console.log(data);
+        }
+    });
+  });
+
+      function color(){
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+
+        var rgba = 'rgba('+r+','+g+','+b+'1.0)';
+        return rgba;
+      }
+</script>
+
+</body>
+</html>
