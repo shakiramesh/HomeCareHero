@@ -1,0 +1,130 @@
+
+     .log_reg{
+        height:  auto;
+        width:400px;
+        background-color: white;
+        padding:20px;
+        margin: 6% auto;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     .btn_tog{
+        width:220px;
+        margin: 35px auto;
+        padding: 5;
+        box-shadow: 0 0 20px 9px #ff61241f;
+        position:relative;
+        border-radius: 30px;
+     }
+
+     .togglebtn{
+    
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: black;
+        padding: 22px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        position: relative;
+        outline: none;
+     }
+
+     #act_btn{
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: linear-gradient(to right, #b666d2, #fff);
+        border-radius:30px;
+        transition: 0.5s;
+     }
+
+     .sub_btn{
+        
+        width: 85%;
+        padding: 10px;
+        margin-left: 30px;
+        font-size:18px;
+        border-radius: 30px;
+        background: linear-gradient(to right, pink, #fff);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        cursor: pointer;
+        border:none;
+     }
+
+     .input_field{
+         width: 100%;
+         padding: 10px 0;
+         margin: 5px;
+         border-top:0;
+         border-left:0;
+         border-right:0;
+         border-bottom: 2px solid pink;
+         outline: none;
+         background: transparent;
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         font-size:18px;
+     }
+
+     .input_grp{
+      width: 280px;
+       transition: 0.5s;
+       margin-left:30px;
+     }
+
+     .space{
+        height:800px;
+     }
+
+     h3{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding:10px;
+     }
+
+     input[type="text"],
+     input[type="file"],
+     input[type="submit"] {
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 20px;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         box-sizing: border-box;
+         font-size: 16px;
+     }
+
+     input[type="submit"] {
+         background-color: #9370db;
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+
+     }
+
+     input[type="submit"]:hover {
+         background-color: #7851a9;
+     }
+
+     .file-input-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         font-size: 16px;
+         padding: 10px;
+    }
+
+    .file-input-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .file-upload-icon {
+        margin-right: 8px;
+    }

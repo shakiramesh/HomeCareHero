@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <canvas id="paymentChart" width="800" height="400"></canvas>
+
+    <?php
+    // Database connection (assuming a file named connection.php exists with the connection details)
+    include 'connection.php';
+
+    // Fetch data from the user_payments table
+    $sql = "SELECT amount FROM user_payments";
+    $result = $conn->query($sql);
+
+    // Initialize variables
+    $above1000 = 0;
+    $below200 = 0;
+    $below1000 = 0;
+
+    // Process the data
+    while($row = $result->fetch_assoc()) {
+        if ($row['amount'] > 1000) $above1000++;
+        elseif ($row['amount'] < 200) $below200++;
+        else $below1000++;
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
+
+    <script>
+        const ctx = document.getElementById('paymentChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Above 1000', 'Below 200', 'Below 1000'],
+                datasets: [{
+                    label: 'Number of Payments',
+                    data: [<?php echo $above1000; ?>, <?php echo $below200; ?>, <?php echo $below1000; ?>],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
