@@ -1,0 +1,28 @@
+.ul-menus{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 180%;
+    background-color: #C3B1E1;
+   }
+
+   .act{
+    display: block;
+  text-decoration: none;
+    font-size:10px;
+    color:#602f6b;
+    margin-top:0px;
+    width:10%;  
+    padding-top:30px; 
+   }
+    .actact{
+        color: white;
+        background-color: lavender;
+        padding:10px;
+        width:26px;/* Adjusted padding */     
+    }
+
+    .div-ul-menus{
+      float:right;
+    }
